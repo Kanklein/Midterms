@@ -42,6 +42,37 @@ public class MainActivity extends AppCompatActivity {
     // TODO Milestone A: Use Day-Night mode.
     private void nightModeListenerMethod() {
 
+        Switch swNight = (Switch) findViewById(R.id.swNight);
+        swNight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ConstraintLayout bgElement = (ConstraintLayout) findViewById(R.id.clMain);
+                TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
+                TextView tvLblPrev = (TextView) findViewById(R.id.tvLblPrev);
+                TextView etPrev = (TextView) findViewById(R.id.etPrev);
+                TextView tvLblNew = (TextView) findViewById(R.id.tvLblNew);
+                TextView etNew = (TextView) findViewById(R.id.etNew);
+                TextView tvLblPipe = (TextView) findViewById(R.id.tvLblPipe);
+                TextView tvLblPackage = (TextView) findViewById(R.id.tvLblPackage);
+                TextView tvLblHistory = (TextView) findViewById(R.id.tvLblHistory);
+                TextView tvLblBill = (TextView) findViewById(R.id.tvLblBill);
+                TextView etResult = (TextView) findViewById(R.id.etResult);
+                TextView[] texts = {tvTitle, tvLblPrev, etPrev, tvLblNew, etNew, tvLblPipe, tvLblPackage, tvLblHistory, tvLblBill, etResult};
+                boolean day = swNight.isChecked();
+                if (day){
+                    bgElement.setBackgroundColor(Color.BLACK);
+                    for(TextView tv : texts){
+                        tv.setTextColor(Color.WHITE);
+                    }
+                } else {
+                    bgElement.setBackgroundColor(Color.WHITE);
+                    for(TextView tv : texts){
+                        tv.setTextColor(Color.BLACK);
+                    }
+                }
+            }
+        });
+
     }
 
     // TODO Milestone B: Show History.
