@@ -57,17 +57,27 @@ public class MainActivity extends AppCompatActivity {
                 TextView tvLblHistory = (TextView) findViewById(R.id.tvLblHistory);
                 TextView tvLblBill = (TextView) findViewById(R.id.tvLblBill);
                 TextView etResult = (TextView) findViewById(R.id.etResult);
+                RadioButton rbPremium = (RadioButton) findViewById(R.id.rbPremium);
+                RadioButton rbRegular = (RadioButton) findViewById(R.id.rbRegular);
+                RadioButton rbBasic = (RadioButton) findViewById(R.id.rbBasic);
+                Spinner spPipe = (Spinner) findViewById(R.id.spPipe);
+                RadioButton[] radioButtons = {rbPremium, rbRegular, rbBasic};
                 TextView[] texts = {tvTitle, tvLblPrev, etPrev, tvLblNew, etNew, tvLblPipe, tvLblPackage, tvLblHistory, tvLblBill, etResult};
                 boolean day = swNight.isChecked();
                 if (day){
                     bgElement.setBackgroundColor(Color.BLACK);
                     for(TextView tv : texts){
                         tv.setTextColor(Color.WHITE);
+
+                    }for (RadioButton rb : radioButtons){
+                        rb.setTextColor(Color.WHITE);
                     }
                 } else {
                     bgElement.setBackgroundColor(Color.WHITE);
                     for(TextView tv : texts){
                         tv.setTextColor(Color.BLACK);
+                    }for (RadioButton rb : radioButtons){
+                        rb.setTextColor(Color.BLACK);
                     }
                 }
             }
